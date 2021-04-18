@@ -1,9 +1,9 @@
 # 😷:syringe:🦠 CovidVac
-Repositório destinado à implementação de um sistema de vacinação para COVID-19 se utilizando do padrão de projeto *State*.
+Repositório destinado à implementação de um sistema de vacinação para COVID-19 fazendo-se uso do padrão de projeto *State*.
 
 ❗Adicional: Foi utilizado o padrão *strategy* para construção do menu.
 
-## Funcionalidades
+## :pencil: Funcionalidades
 
 - [X] Cadastro de pessoas para aguardar a vez da vacinação.
 - [X] Alteração de dado(s) do cadastro.
@@ -13,8 +13,9 @@ Repositório destinado à implementação de um sistema de vacinação para COVI
     - Tomou a primeira dose.
     - Habilitado para tomar a segunda dose.
     - Vacinação finalizada.
+- [X] Sair do sistema.
 
-## Funcionalidades Adicionais
+## :pushpin: Funcionalidades Adicionais
 - [X] Entrar no sistema, se paciente já foi cadastrado.
 - [X] Exibir etapa de vacinação do paciente.
 
