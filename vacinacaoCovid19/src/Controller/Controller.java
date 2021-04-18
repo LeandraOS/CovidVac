@@ -15,6 +15,10 @@ public class Controller {
                                 String telefone, String profissao, int idade, String comorbidades) {
         if (CPF.length() != 11) {
             System.out.printf("Cadastro não realizado. CPF %s inválido! Tente novamente...\n", CPF);
+        }
+        else if(numeroCartaoSus.length() != 15){
+            System.out.printf("Cadastro não realizado. Número do cartão do SUS - %s inválido! Tente novamente...\n", numeroCartaoSus);
+
         } else {
             Pessoa pessoaNova = new Pessoa(nome, CPF, endereco, numeroCartaoSus, email, telefone, profissao, idade,
                     comorbidades);
@@ -30,7 +34,7 @@ public class Controller {
             pessoa.atualizaVacinacao(pessoa);
 
         }else{
-            System.out.println("Paciente com cpf - "+ cpf + "não cadastrado!! Tente novamente...");
+            System.out.println("Paciente com CPF - "+ cpf + "não cadastrado!! Tente novamente...");
         }
     }
     public void alterarDadoCadastro(String opcao, String CPF, String nomeDado, String novoDado) {
@@ -56,12 +60,12 @@ public class Controller {
         }
     }
 
-    public void exibirPessoa(String CPF){
+    public void exibirSituacaoPessoa(String CPF){
         if(!this.mapPessoas.containsKey(CPF)){
             System.out.println(String.format("\nPaciente.Pessoa com CPF - %s não está cadastrada! Tente novamente...\n", CPF));
         }
         else{
-            System.out.println(this.mapPessoas.get(CPF).toString());
+            System.out.println(this.mapPessoas.get(CPF).toStringSituacao());
         }
     }
 }

@@ -14,20 +14,20 @@ public enum OpcoesMenu {
             System.out.println("\nDigite o nome: ");
             String nome = input.nextLine().toUpperCase();
 
-            System.out.print("Digite o CPF: ");
+            System.out.print("Digite o CPF (11 dígitos): ");
             String cpf = input.nextLine().toUpperCase();
-
-            System.out.print("\nDigite o telefone: ");
-            String telefone = input.nextLine().toUpperCase();
 
             System.out.print("\nDigite o endereço: ");
             String endereco = input.nextLine().toUpperCase();
 
+            System.out.print("\nDigite o número do cartão do SUS (15 dígitos): ");
+            String numeroCartaoSus = input.nextLine().toUpperCase();
+
             System.out.print("\nDigite o email: ");
             String email = input.nextLine().toUpperCase();
 
-            System.out.print("\nDigite o número do cartão do SUS: ");
-            String numeroCartaoSus = input.nextLine().toUpperCase();
+            System.out.print("\nDigite o telefone: ");
+            String telefone = input.nextLine().toUpperCase();
 
             System.out.print("\nDigite a profissão: ");
             String profissao = input.nextLine().toUpperCase();
@@ -39,7 +39,7 @@ public enum OpcoesMenu {
             System.out.print("\nDigite as comorbidades (separadas por vírgula): ");
             String comorbidades = input.nextLine().toLowerCase();
 
-            controller.cadastroUsuario(nome, cpf, telefone, endereco, email, numeroCartaoSus, profissao,idade, comorbidades);
+            controller.cadastroUsuario(nome, cpf, endereco,  numeroCartaoSus,  email, telefone, profissao,idade, comorbidades);
         }
     },
 
@@ -110,7 +110,7 @@ public enum OpcoesMenu {
             Scanner input = new Scanner(System.in);
             System.out.print("Digite o CPF: ");
             String CPF = input.nextLine().toUpperCase();
-            controller.exibirPessoa(CPF);
+            controller.exibirSituacaoPessoa(CPF);
         }
     },
 

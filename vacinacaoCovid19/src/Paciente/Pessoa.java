@@ -186,4 +186,7 @@ public class Pessoa {
                 "Comorbidades: " + Arrays.toString(comorbidades) +'\n' +
                 "Situação: " + stateVacinacao.toString();
     }
+     public String toStringSituacao(){
+        return "Situação: " + stateVacinacao.toString();
+     }
 }

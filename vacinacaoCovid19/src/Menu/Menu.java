@@ -31,7 +31,7 @@ public class Menu {
                 + "(E)ntrar no sistema \n"
                 + "(A)lterar todos os dados da pessoa\n"
                 + "(M)udar um dado da pessoa \n"
-                + "(EX)ibir pessoa \n"
+                + "(EX)ibir etapa de vacinação do paciente \n"
                 + "(S)air\n"
                 + "Digite uma opção> \n";
         System.out.println(menu);
