@@ -3,10 +3,12 @@ package Menu;
 import Controller.Controller;
 
 import java.util.Scanner;
+/*Classe responsavel pelo menu.
+* Através do método valueOf, o usuario escolhe a opcao e o enum correspondente é captado executado na classe Menu*/
 
 public enum OpcoesMenu {
 
-    C{
+    C{ // Cadastrar
         @Override
         public void opcao(Controller controller, String cadastra) {
             Scanner input = new Scanner(System.in);
@@ -43,7 +45,7 @@ public enum OpcoesMenu {
         }
     },
 
-    E{
+    E{ // Entrar no sistema
         @Override
         public void opcao(Controller controller, String entra) {
             Scanner input = new Scanner(System.in);
@@ -53,7 +55,7 @@ public enum OpcoesMenu {
         }
     },
 
-    A {
+    A { // Atualizar
         @Override
         public void opcao(Controller controller, String atualiza) {
             Scanner input = new Scanner(System.in);
@@ -89,7 +91,7 @@ public enum OpcoesMenu {
         }
         },
 
-    M{
+    M{ //Mudar um dado
         @Override
         public void opcao(Controller controller, String mudaTodos) {
             Scanner input = new Scanner(System.in);
@@ -104,7 +106,7 @@ public enum OpcoesMenu {
         }
     },
 
-    EX{
+    EX{ // Exibe situacao do paciente
         @Override
         public void opcao(Controller controller, String exibe){
             Scanner input = new Scanner(System.in);
@@ -113,17 +115,7 @@ public enum OpcoesMenu {
             controller.exibirSituacaoPessoa(CPF);
         }
     },
-
-    I{
-        @Override
-        public void opcao(Controller controller, String imprime) {
-            Scanner input = new Scanner(System.in);
-            System.out.print("Digite a situação: ");
-            String situacao = input.nextLine().toUpperCase();
-        }
-    },
-
-    S{
+    S{ // Sair do sistema
         @Override
         public void opcao(Controller controller, String sai) {
             Scanner input = new Scanner(System.in);
