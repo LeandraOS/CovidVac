@@ -3,7 +3,7 @@ Repositório destinado à implementação de um sistema de vacinação para COVI
 
 ❗Adicional: Foi utilizado o padrão *Strategy* para construção do menu.
 
-## Funcionalidades
+## 📝 Funcionalidades
 
 - [X] Cadastro de pessoas para aguardar a vez da vacinação.
 - [X] Alteração de dado(s) do cadastro.
@@ -14,7 +14,7 @@ Repositório destinado à implementação de um sistema de vacinação para COVI
     - Habilitado para tomar a segunda dose.
     - Vacinação finalizada.
 
-## Funcionalidades Adicionais
+## 📌Funcionalidades Adicionais
 - [X] Entrar no sistema, se paciente já foi cadastrado.
 - [X] Exibir etapa de vacinação do paciente.
 
