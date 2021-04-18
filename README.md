@@ -14,7 +14,7 @@ Repositório destinado à implementação de um sistema de vacinação para COVI
   - Habilitado para tomar a segunda dose.
   - Vacinação finalizada.
 
-## 📌Funcionalidades Adicionais
+## 📌 Funcionalidades Adicionais
 - [X] Entrar no sistema, se paciente já foi cadastrado.
 - [X] Exibir etapa de vacinação do paciente.
 
@@ -22,6 +22,6 @@ Repositório destinado à implementação de um sistema de vacinação para COVI
 
 ```git clone https://github.com/LeandraOS/Psoft-Lab06.git``` 
 
-### Observações: 
+### :warning: Observações: 
 - Não há persistência de dados.
 - Há uso apenas de interface textual.
