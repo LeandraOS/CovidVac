@@ -4,7 +4,7 @@ import Controller.Controller;
 
 import java.util.Scanner;
 /*Classe responsavel pelo menu.
-* Através do método valueOf, o usuario escolhe a opcao e o enum correspondente é captado executado na classe Menu*/
+* Através do método valueOf(), o usuario escolhe a opcao e o enum correspondente é captado e executado na classe Menu*/
 
 public enum OpcoesMenu {
 

@@ -12,6 +12,7 @@ public class HabPrimeiraDose extends StateVacinacao {
         Scanner input = new Scanner(System.in);
         System.out.println("Deseja continuar? (S/N)");
         String opcao = input.nextLine().toUpperCase();
+
         if (opcao.equals("S")) {
             System.out.println("Vá até o posto de saúde mais próximo para receber a primeira dose da vacina.");
             System.out.println("Paciente vacinado? (S/N)");

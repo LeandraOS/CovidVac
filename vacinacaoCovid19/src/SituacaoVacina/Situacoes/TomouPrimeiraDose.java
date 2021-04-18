@@ -25,11 +25,11 @@ public class TomouPrimeiraDose extends StateVacinacao {
         if(opcao.equals("S") && qtdDiasPrimDose >= 20){
             pessoa.setStateVacinacao(new HabSegDose());
             pessoa.atualizaVacinacao(pessoa);
-        }
-        else if(opcao.equals("N")){
+
+        }else if(opcao.equals("N")){
             System.out.println("Retorne novamente ao sistema, na data que irá receber a segunda dose.\n" + pessoa.toString());
 
-        } else if( qtdDiasPrimDose < 20){
+        }else if( qtdDiasPrimDose < 20){
             System.out.print("\nVocê recebeu a primeira dose há " + qtdDiasPrimDose + " dias. \nFaltam " +  diferencaQtdDias + " dias para você estar apto a receber a segunda dose.\n");
             System.out.println("\nRetorne ao sistema daqui a " + diferencaQtdDias + "  dias!" + pessoa.toString() + "\n");
         }
