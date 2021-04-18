@@ -20,8 +20,8 @@ Repositório destinado à implementação de um sistema de vacinação para COVI
 
 ### :inbox_tray: Para utilizar o sistema:
 
-```git clone https://github.com/LeandraOS/Psoft-Lab06.git``` 
+```git clone https://github.com/LeandraOS/Psoft-Lab06.git```
 
-### :warning: Observações: 
+### :warning: Observações:
 - Não há persistência de dados.
 - Há uso apenas de interface textual.
