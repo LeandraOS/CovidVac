@@ -13,10 +13,12 @@ public class HabSegDose extends StateVacinacao {
         Scanner input = new Scanner(System.in);
         System.out.println("Você está habilitado para tomar a segunda dose, deseja continuar? (S/N)");
         String opcao = input.nextLine().toUpperCase();
+
         if (opcao.equals("S")) {
             System.out.println("Vá até o posto de saúde mais próximo para receber a segunda dose da vacina.");
             System.out.println("Paciente vacinado? (S/N)");
             String vacinado = input.nextLine().toUpperCase();
+
             if (vacinado.equals("S")) {
                 System.out.println("Aplicação da segunda dose feita com sucesso! Continue se cuidando! \n" +  pessoa.toString());
                 pessoa.setStateVacinacao(new VacFinalizada());

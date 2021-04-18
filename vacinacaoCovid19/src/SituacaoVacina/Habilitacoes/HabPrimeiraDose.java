@@ -16,6 +16,7 @@ public class HabPrimeiraDose extends StateVacinacao {
             System.out.println("Vá até o posto de saúde mais próximo para receber a primeira dose da vacina.");
             System.out.println("Paciente vacinado? (S/N)");
             String vacinado = input.nextLine().toUpperCase();
+
             if (vacinado.equals("S")) {
                 System.out.println("Aplicação da primeira dose feita com sucesso! Continue se cuidando!");
                 System.out.println("\nRetorne ao sistema após 20 dias!");
