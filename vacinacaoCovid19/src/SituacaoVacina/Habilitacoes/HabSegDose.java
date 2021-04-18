@@ -28,4 +28,9 @@ public class HabSegDose extends StateVacinacao {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "Paciente habilitado(a) para tomar a segunda dose.";
+    }
 }

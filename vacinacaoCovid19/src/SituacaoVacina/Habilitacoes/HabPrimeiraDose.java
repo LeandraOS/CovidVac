@@ -30,4 +30,9 @@ public class HabPrimeiraDose extends StateVacinacao {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "Paciente habilitado(a) para tomar a primeira dose.";
+    }
 }

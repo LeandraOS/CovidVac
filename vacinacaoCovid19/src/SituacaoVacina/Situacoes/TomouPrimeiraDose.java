@@ -31,4 +31,9 @@ public class TomouPrimeiraDose extends StateVacinacao {
             System.out.println("\nRetorne ao sistema daqui a " + diferencaQtdDias + "  dias!" + pessoa.toString() + "\n");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Paciente recebeu a primeira dose.";
+    }
 }

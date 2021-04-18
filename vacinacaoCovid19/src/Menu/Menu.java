@@ -1,7 +1,6 @@
 package Menu;
 
 import Controller.Controller;
-
 import java.util.Scanner;
 
 public class Menu {
@@ -13,17 +12,13 @@ public class Menu {
     public static void exibeMenu() {
         Controller controller = new Controller();
         Scanner input = new Scanner(System.in);
-
-
-
-        String opcao;
         while (true) {
             imprimeMenu();
-            opcao = input.nextLine().toUpperCase();
+            String opcao = input.nextLine().toUpperCase();
             if (opcao.equals("S")) {
                 break;
             }
-            try {
+            try { //uso do padrão strategy. Utilizo enums para reduzir a quantidade de condicionais no menu.
                 OpcoesMenu opcoes = OpcoesMenu.valueOf(opcao);
                 opcoes.opcao(controller, opcao);
             } catch (IllegalArgumentException e) {

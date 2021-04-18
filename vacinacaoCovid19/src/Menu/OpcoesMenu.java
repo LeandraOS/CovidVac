@@ -33,13 +33,13 @@ public enum OpcoesMenu {
             String profissao = input.nextLine().toUpperCase();
 
             System.out.print("\nDigite a idade: ");
-            Integer idade = input.nextInt();
+            int idade = input.nextInt();
+            input.nextLine();
 
             System.out.print("\nDigite as comorbidades (separadas por vírgula): ");
             String comorbidades = input.nextLine().toLowerCase();
 
             controller.cadastroUsuario(nome, cpf, telefone, endereco, email, numeroCartaoSus, profissao,idade, comorbidades);
-
         }
     },
 
@@ -53,7 +53,7 @@ public enum OpcoesMenu {
         }
     },
 
-    A{
+    A {
         @Override
         public void opcao(Controller controller, String atualiza) {
             Scanner input = new Scanner(System.in);
@@ -80,12 +80,13 @@ public enum OpcoesMenu {
 
             System.out.print("\nDigite a idade: ");
             Integer idade = input.nextInt();
+            input.nextLine();
 
             System.out.print("\nDigite as comorbidades (separadas por vírgula): ");
-            String comorbidades = input.nextLine().toUpperCase();
+            String comorbidades = input.nextLine().toLowerCase();
 
             controller.alterarTodosDadosCadastro(nome, cpf, endereco, numeroCartaoSus, email, telefone, profissao, idade, comorbidades);
-    }
+        }
         },
 
     M{

@@ -9,4 +9,9 @@ public class VacFinalizada extends StateVacinacao {
         System.out.println("Parabéns!!! Você finalmente está imunizado contra a COVID-19. Continue se cuidando!");
         System.out.println(pessoa.toString());
     }
+
+    @Override
+    public String toString() {
+        return "Paciente imunizado!";
+    }
 }

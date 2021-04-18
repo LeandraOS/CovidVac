@@ -3,9 +3,7 @@ package Controller;
 import Paciente.Pessoa;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class Controller {
     private Map<String, Pessoa> mapPessoas;
@@ -16,8 +14,7 @@ public class Controller {
     public void cadastroUsuario(String nome, String CPF, String endereco, String numeroCartaoSus, String email,
                                 String telefone, String profissao, int idade, String comorbidades) {
         if (CPF.length() != 11) {
-            System.out.printf("Cadastro não realizado. CPF %s inválido! Tente novamente...%n", CPF);
-
+            System.out.printf("Cadastro não realizado. CPF %s inválido! Tente novamente...\n", CPF);
         } else {
             Pessoa pessoaNova = new Pessoa(nome, CPF, endereco, numeroCartaoSus, email, telefone, profissao, idade,
                     comorbidades);
@@ -25,14 +22,13 @@ public class Controller {
 
             pessoaNova.atualizaVacinacao(pessoaNova);
             System.out.println(String.format("\nUsuário cadastrado com sucesso! %s\n"));
-
-
         }
     }
     public void entrarNoSistema (String cpf){
         if(mapPessoas.containsKey(cpf)){
             Pessoa pessoa = this.mapPessoas.get(cpf);
             pessoa.atualizaVacinacao(pessoa);
+
         }else{
             System.out.println("Paciente com cpf - "+ cpf + "não cadastrado!! Tente novamente...");
         }

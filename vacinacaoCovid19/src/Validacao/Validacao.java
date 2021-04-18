@@ -13,17 +13,16 @@ public class Validacao {
         return false;
     }
 
-    public  boolean validaComorbidade(String comorbidades) {
+    public  boolean validaComorbidade(String [] comorbidades) {
         List<String> comorbidadesValidas = Arrays.asList("fibrose cística", "fibrose pulmonar", "diabetes", "pneumoconioses", "displasia broncopulmonar", "asma", "hipertensão arterial", "insuficiência cardíaca",
                 "cor-pulmonale", "hipertensão pulmonar", "hipertensão arterial", "cardiopatia hipertensiva", "síndrome coronarianas", "valvopatias", "miocardiopatias ", "pericardiopatias",
                 "neurismas", "dissecções", "hematomas da aorta", "arritmias cardíacas", "problemas cardíacos", "acidente vascular cerebral", "demência vascular",
                 "transplatado", "anemia", "sindrome de down", "cirrose hepática", "obesidade", "tuberculose");
 
-        for (int i = 0; i < comorbidadesValidas.size(); i++) {
-            if (comorbidadesValidas.contains(comorbidades)) {
+        for (int i = 0; i < comorbidades.length; i++) {
+            if (comorbidadesValidas.contains(comorbidades[i])) {
                 return true;
             }
-        }
-        return false;
+        } return false;
     }
 }
