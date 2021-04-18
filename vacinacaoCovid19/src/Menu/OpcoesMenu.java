@@ -1,8 +1,12 @@
+package Menu;
+
+import Controller.Controller;
+
 import java.util.Scanner;
 
 public enum OpcoesMenu {
 
-    C {
+    C{
         @Override
         public void opcao(Controller controller, String cadastra) {
             Scanner input = new Scanner(System.in);
@@ -10,7 +14,7 @@ public enum OpcoesMenu {
             System.out.println("\nDigite o nome: ");
             String nome = input.nextLine().toUpperCase();
 
-            System.out.print("\nDigite o CPF: ");
+            System.out.print("Digite o CPF: ");
             String cpf = input.nextLine().toUpperCase();
 
             System.out.print("\nDigite o telefone: ");
@@ -28,21 +32,35 @@ public enum OpcoesMenu {
             System.out.print("\nDigite a profissão: ");
             String profissao = input.nextLine().toUpperCase();
 
-            System.out.print("\nDigite as comorbidades (separadas por vírgula): ");
-            String comorbidades = input.nextLine().toUpperCase();
+            System.out.print("\nDigite a idade: ");
+            Integer idade = input.nextInt();
 
-            controller.cadastroUsuario(nome, cpf, telefone, endereco, email, numeroCartaoSus, profissao, comorbidades);
+            System.out.print("\nDigite as comorbidades (separadas por vírgula): ");
+            String comorbidades = input.nextLine().toLowerCase();
+
+            controller.cadastroUsuario(nome, cpf, telefone, endereco, email, numeroCartaoSus, profissao,idade, comorbidades);
 
         }
     },
-    A {
+
+    E{
+        @Override
+        public void opcao(Controller controller, String entra) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("\nDigite o CPF: ");
+            String cpf = input.nextLine();
+            controller.entrarNoSistema(cpf);
+        }
+    },
+
+    A{
         @Override
         public void opcao(Controller controller, String atualiza) {
             Scanner input = new Scanner(System.in);
             System.out.println("\nDigite o nome: ");
             String nome = input.nextLine().toUpperCase();
 
-            System.out.print("\nDigite o CPF: ");
+            System.out.print("Digite o CPF: ");
             String cpf = input.nextLine().toUpperCase();
 
             System.out.print("\nDigite o telefone: ");
@@ -60,9 +78,13 @@ public enum OpcoesMenu {
             System.out.print("\nDigite a profissão: ");
             String profissao = input.nextLine().toUpperCase();
 
+            System.out.print("\nDigite a idade: ");
+            Integer idade = input.nextInt();
+
             System.out.print("\nDigite as comorbidades (separadas por vírgula): ");
             String comorbidades = input.nextLine().toUpperCase();
-            controller.alterarTodosDadosCadastro(nome, cpf, endereco, numeroCartaoSus, email, telefone, profissao, comorbidades);
+
+            controller.alterarTodosDadosCadastro(nome, cpf, endereco, numeroCartaoSus, email, telefone, profissao, idade, comorbidades);
     }
         },
 
@@ -81,7 +103,7 @@ public enum OpcoesMenu {
         }
     },
 
-    E{
+    EX{
         @Override
         public void opcao(Controller controller, String exibe){
             Scanner input = new Scanner(System.in);

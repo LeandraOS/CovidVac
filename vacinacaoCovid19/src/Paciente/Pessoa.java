@@ -1,3 +1,8 @@
+package Paciente;
+
+import SituacaoVacina.Habilitacoes.NaoHabilitada;
+import SituacaoVacina.StateVacinacao;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -11,9 +16,12 @@ public class Pessoa {
     private String email;
     private String telefone;
     private String profissao;
+    private Integer idade;
     private List<String> comorbidades;
+    private StateVacinacao stateVacinacao;
 
-    public Pessoa(String nomeCompleto, String CPF, String endereco, String numCartaoSUS, String email, String telefone, String profissao, String comorbidades) {
+
+    public Pessoa(String nomeCompleto, String CPF, String endereco, String numCartaoSUS, String email, String telefone, String profissao, Integer idade, String comorbidades) {
         this.nomeCompleto = nomeCompleto;
         this.CPF = CPF;
         this.endereco = endereco;
@@ -21,10 +29,38 @@ public class Pessoa {
         this.email = email;
         this.telefone = telefone;
         this.profissao = profissao;
-        this.comorbidades = mapComorbidades(comorbidades);;
+        this.comorbidades = percorreComorbidades(comorbidades);
+        this.idade = idade;
+
+        this.stateVacinacao = new NaoHabilitada();
     }
 
+    public Integer getIdade() {
+        return idade;
+    }
 
+    public void setIdade(Integer idade) {
+        this.idade = idade;
+    }
+
+    public StateVacinacao getStateVacinacao() {
+        return stateVacinacao;
+    }
+    public String getComorbidades() {
+        String saida = "";
+        for (String string : this.comorbidades) {
+            saida += string + " ";
+        }
+        return saida;
+    }
+
+    public void setStateVacinacao(StateVacinacao stateVacinacao) {
+        this.stateVacinacao = stateVacinacao;
+    }
+
+    public void atualizaVacinacao(Pessoa pessoa){
+        stateVacinacao.stateVacinacao(pessoa);
+    }
 
     public String getNomeCompleto() {
         return nomeCompleto;
@@ -82,20 +118,12 @@ public class Pessoa {
         this.profissao = profissao;
     }
 
-    public String getComorbidades() {
-        String saida = "[";
-        for (String string : this.comorbidades) {
-            saida += string + " ";
-        }
-        saida += "]";
-        return saida;
-    }
 
     public void setComorbidades(List<String> comorbidades) {
         this.comorbidades = comorbidades;
     }
 
-    public List<String> mapComorbidades(String comorbidades) {
+    public List<String> percorreComorbidades(String comorbidades) {
         List<String> listaComorbidades = new ArrayList<String>();
         for (String comorbidade : comorbidades.replaceAll(" ", "").split(",")) {
             listaComorbidades.add(comorbidade);
@@ -126,7 +154,7 @@ public class Pessoa {
                 this.setProfissao(dadoNovo);
 
             } else if (dado.equals("COMORBIDADES")) {
-                this.setComorbidades(this.mapComorbidades(dadoNovo));
+                this.setComorbidades(this.percorreComorbidades(dadoNovo));
 
             } else {
                 System.out.println("Dado não pode ser alterado, pois não existe! Tente novamente...");
@@ -134,7 +162,7 @@ public class Pessoa {
         }
     }
 
-    public void setTodosDados(String nomeCompleto, String CPF, String endereco, String numCartaoSUS, String email, String telefone, String profissao, String comorbidades){
+    public void setTodosDados(String nomeCompleto, String CPF, String endereco, String numCartaoSUS, String email, String telefone, String profissao, Integer idade, String comorbidades){
         this.setNomeCompleto(nomeCompleto);
         this.setCPF(CPF);
         this.setEndereco(endereco);
@@ -142,10 +170,10 @@ public class Pessoa {
         this.setEmail(email);
         this.setTelefone(telefone);
         this.setProfissao(profissao);
-        this.setComorbidades(this.mapComorbidades(comorbidades));
+        this.setIdade(idade);
+        this.setComorbidades(this.percorreComorbidades(comorbidades));
 
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -169,6 +197,7 @@ public class Pessoa {
                 "Email: " + email  +'\n'+
                 "Telefone: " + telefone  +'\n'+
                 "Profissao: " + profissao  +'\n'+
-                "Comorbidades: " + comorbidades;
+                "Comorbidades: " + comorbidades +'\n' +
+                "Situação: " + stateVacinacao;
     }
 }
